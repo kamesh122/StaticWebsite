@@ -19,7 +19,7 @@ steps:
      replaceExistingArchive: true
 
 
-- task: AzureWebApp@1
+ - task: AzureWebApp@1
    inputs:
      azureSubscription: 'new-azure-service-connection'
      appType: 'webApp'
