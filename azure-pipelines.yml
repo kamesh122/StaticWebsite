@@ -17,5 +17,13 @@ steps:
      archiveType: 'zip'
      archiveFile: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
      replaceExistingArchive: true
-     
+
+
+- task: AzureWebApp@1
+   inputs:
+     azureSubscription: 'new-azure-service-connection'
+     appType: 'webApp'
+     appName: 'kameshtest'
+     package: '$(System.DefaultWorkingDirectory)/*.zip'
+     deploymentMethod: 'auto'
 
